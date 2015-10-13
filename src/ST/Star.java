@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 /**
  * Background stars in space.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Star {

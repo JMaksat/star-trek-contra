@@ -8,20 +8,20 @@ import java.util.Random;
 /**
  * Enemy space ship.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Enemy {
     
     // For creating new enemies.
     private static final long timeBetweenNewEnemiesInit = Framework.secInNanosec * 3;
-    public static long timeBetweenNewEnemies = timeBetweenNewEnemiesInit;
-    public static long timeOfLastCreatedEnemy = 0;
+    public  static long timeBetweenNewEnemies = timeBetweenNewEnemiesInit;
+    public  static long timeOfLastCreatedEnemy = 0;
 
 	// Hit moment
-	public boolean isHit = false;
-	public long currenTimeHit;
-	public long lastTimeHit;
+	public  boolean isHit = false;
+	public  long    currenTimeHit;
+	public  long    lastTimeHit;
 	private final static long delayTimeHit = Framework.secInNanosec / 10;
     
     // For creating new bullets.
@@ -177,10 +177,6 @@ public class Enemy {
 	        this.xCoordinate = random.nextInt(Framework.frameWidth - enemy_shipBodyImg.getWidth());
 	        this.yCoordinate = -enemy_shipBodyImg.getHeight();
         }
-        
-        // Moving speed and direction of enemy.
-        //movingYspeed = movingYspeedInit;
-        
     }
     
     /**
@@ -189,7 +185,6 @@ public class Enemy {
     public static void restartEnemy(){
         Enemy.timeBetweenNewEnemies = timeBetweenNewEnemiesInit;
         Enemy.timeOfLastCreatedEnemy = 0;
-        //Enemy.movingYspeed = movingYspeedInit;
     }
     
     
@@ -199,8 +194,6 @@ public class Enemy {
     public static void speedUp(){
         if(Enemy.timeBetweenNewEnemies > Framework.secInNanosec)
             Enemy.timeBetweenNewEnemies -= Framework.secInNanosec / 100;
-        
-       // Enemy.movingXspeed -= 0.25;
     }
 
     /**

@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 /**
  * Actual game.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Game {
@@ -765,7 +765,7 @@ public class Game {
                 // Current enemy rectangle.
                 Rectangle enemyRectangel = new Rectangle(eh.xCoordinate, eh.yCoordinate, eh.enemy_shipBodyImg.getWidth(), eh.enemy_shipBodyImg.getHeight());
 
-                // Is current bullet over currnet enemy?
+                // Is current bullet over current enemy?
                 if(bulletRectangle.intersects(enemyRectangel))
                 {
                     // Bullet hit the enemy so we reduce his health.

@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
 /**
  * Ship which is managed by player.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class PlayerShip {
@@ -60,7 +60,7 @@ public class PlayerShip {
     
     // Moving speed and also direction.
     private double movingXspeed;
-    public double movingYspeed;
+    public  double movingYspeed;
     private double maximumXspeed;
     private double maximumYspeed;
     private double acceleratingXspeed;
@@ -79,9 +79,11 @@ public class PlayerShip {
     // Offset of the ship machine gun. We add offset to the position of the position of ship.
     private int offsetXMachineGun;
     private int offsetYMachineGun;
+    
     // Position on the frame/window of the ship machine gun.
     public int machineGunXcoordinate;
     public int machineGunYcoordinate;
+    
     // Font for info text
     private Font font;
     public static String infoText = "";
@@ -108,22 +110,22 @@ public class PlayerShip {
      */
     private void Initialize()
     {
-        this.health = healthInit;
-        this.life   = lifeInit;
+        this.health        = healthInit;
+        this.life          = lifeInit;
         Bullet.damagePower = Bullet.damagePowerInit;
-        Bullet.r = 0;
+        Bullet.r           = 0;
         
-        this.movingXspeed = 0;
-        this.movingYspeed = 0;
-        this.maximumXspeed = 5;
-        this.maximumYspeed = 5;        
+        this.movingXspeed       = 0;
+        this.movingYspeed       = 0;
+        this.maximumXspeed      = 5;
+        this.maximumYspeed      = 5;        
         this.acceleratingXspeed = 0.4;
         this.acceleratingYspeed = 0.4;
-        this.stoppingXspeed = 0.2;
-        this.stoppingYspeed = 0.2;
+        this.stoppingXspeed     = 0.2;
+        this.stoppingYspeed     = 0.2;
 
-        this.offsetXMachineGun = shipBodyImg.getWidth() - 40;
-        this.offsetYMachineGun = shipBodyImg.getHeight();
+        this.offsetXMachineGun     = shipBodyImg.getWidth() - 40;
+        this.offsetYMachineGun     = shipBodyImg.getHeight();
         this.machineGunXcoordinate = this.xCoordinate + this.offsetXMachineGun;
         this.machineGunYcoordinate = this.yCoordinate + this.offsetYMachineGun;       
     }
@@ -137,8 +139,10 @@ public class PlayerShip {
         {
             URL shipBodyImgUrl = this.getClass().getResource("/res/NCC1701.png");
             shipBodyImg = ImageIO.read(shipBodyImgUrl);
+            
             URL shipRedImgUrl = this.getClass().getResource("/res/NCC1701_red.png");
             shipRedImg = ImageIO.read(shipRedImgUrl);
+            
             URL shipBlinkImgUrl = this.getClass().getResource("/res/NCC1701_blink.png");
             shipBlinkImg = ImageIO.read(shipBlinkImgUrl);            
 
@@ -205,7 +209,7 @@ public class PlayerShip {
             movingXspeed += acceleratingXspeed;
         else if (Canvas.keyboardKeyState(KeyEvent.VK_LEFT))
             movingXspeed -= acceleratingXspeed;
-        else    // Stoping
+        else    // Stopping
         	if ((int) movingXspeed == 0) 
         		movingXspeed = 0;
             else if (movingXspeed < 0)
@@ -215,8 +219,8 @@ public class PlayerShip {
         
         if (movingXspeed < -maximumXspeed) movingXspeed = -maximumXspeed;
         if (movingXspeed > maximumXspeed) movingXspeed = maximumXspeed;
-    	if (xCoordinate < 0) movingXspeed = acceleratingXspeed;
-    	if (xCoordinate > (Framework.frameWidth - shipBodyImg.getWidth())) movingXspeed = -acceleratingXspeed; 
+    	if (xCoordinate  < 0) movingXspeed = acceleratingXspeed;
+    	if (xCoordinate  > (Framework.frameWidth - shipBodyImg.getWidth())) movingXspeed = -acceleratingXspeed; 
 
     		// Moving on the y coordinate.
         if (Canvas.keyboardKeyState(KeyEvent.VK_UP))
@@ -233,8 +237,8 @@ public class PlayerShip {
 
         if (movingYspeed < -maximumYspeed) movingYspeed = -maximumYspeed;
         if (movingYspeed > maximumYspeed) movingYspeed = maximumYspeed;
-        if (yCoordinate < 0) movingYspeed = acceleratingYspeed;
-        if (yCoordinate > (Framework.frameHeight - shipBodyImg.getHeight())) movingYspeed = -acceleratingYspeed;
+        if (yCoordinate  < 0) movingYspeed = acceleratingYspeed;
+        if (yCoordinate  > (Framework.frameHeight - shipBodyImg.getHeight())) movingYspeed = -acceleratingYspeed;
     }
     
     
@@ -309,10 +313,5 @@ public class PlayerShip {
             else g2d.setColor(Color.GREEN.darker());
             g2d.fillRect(xCoordinate + 16, yCoordinate + 31, 2, 2);    		
     	}
-        //g2d.setColor(Color.WHITE);
-        //g2d.drawRect(xCoordinate, yCoordinate, shipBodyImg.getWidth(), shipBodyImg.getHeight());
-        // Drawing light on the ship
-
     }
-    
 }

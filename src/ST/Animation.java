@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 /**
  * Class for animations, e.g. explosion.
  * 
- * @author www.gametutorial.net
+ * @author Maksat E.
  */
 
 public class Animation {

@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Equipment bonus.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class BonusEquipment {

@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 /**
  * Bullets of enemy.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class EnemyBullet {

@@ -7,7 +7,7 @@ import java.util.Random;
 /**
  * Life bonus.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class BonusLife {

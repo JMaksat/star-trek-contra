@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 /**
  * Bullets of player.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Bullet {
@@ -34,8 +34,6 @@ public class Bullet {
     
     // Moving speed and direction.
     private static int bulletSpeed = 10;
-    //private double movingXspeed;
-    //private double movingYspeed;
     
     // Images of ship machine gun bullet. Image is loaded and set in Game class in LoadContent() method.
     public static BufferedImage bulletImg = null;
@@ -52,53 +50,9 @@ public class Bullet {
     {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
-
-        //if (bulletImg == null) {
-        //	drawBufferedBulletImage();
-        //}
-        //setDirectionAndSpeed(mousePosition);
     }
     
-    /*private void drawBufferedBulletImage()
-    {
-    	bulletImg = new BufferedImage(radius, radius, BufferedImage.TYPE_INT_RGB);
-    	Graphics2D g2d = bulletImg.createGraphics();
-    	
-    	g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    	g2d.setColor(Color.YELLOW.brighter());
-    	g2d.fillOval(0, 0, r + radius, r + radius);
-    	g2d.setColor(Color.YELLOW);
-    	g2d.drawOval(4, 4, r + 4, r +4);    	
-    	g2d.setColor(Color.ORANGE.brighter());
-    	g2d.drawOval(3, 3, r + 6, r + 6);    
-    	g2d.setColor(Color.ORANGE);
-    	g2d.drawOval(2, 2, r + 8, r + 8);
-    	g2d.setColor(Color.ORANGE);
-    	g2d.drawOval(1, 1, r + 10, r + 10);     	
-    	g2d.setColor(Color.RED.darker());
-    	g2d.drawOval(0, 0, r + 12, r + 12);  
-    }*/
-    
-    /**
-     * Calculate the speed on a x and y coordinate.
-     * 
-     * @param mousePosition 
-     */
-    /*private void setDirectionAndSpeed(Point mousePosition)
-    {
-        // Unit direction vector of the bullet.
-        double directionVx = mousePosition.x - this.xCoordinate;
-        double directionVy = mousePosition.y - this.yCoordinate;
-        double lengthOfVector = Math.sqrt(directionVx * directionVx + directionVy * directionVy);
-        directionVx = directionVx / lengthOfVector; // Unit vector
-        directionVy = directionVy / lengthOfVector; // Unit vector
-        
-        // Set speed.
-        this.movingXspeed = bulletSpeed * directionVx;
-        this.movingYspeed = bulletSpeed * directionVy;
-    }*/
-    
-    
+  
     /**
      * Checks if the bullet is left the screen.
      * 
@@ -134,7 +88,6 @@ public class Bullet {
      */
     public void Draw(Graphics2D g2d)
     {
-        //g2d.drawImage(bulletImg, x, y, null);
     	g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     	g2d.setColor(Color.YELLOW.brighter());
     	g2d.fillOval(x, y, r + radius, r + radius);

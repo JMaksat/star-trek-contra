@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
 /**
  * Framework that controls the game (Game.java) that created it, update it and draw it on the screen.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Framework extends Canvas {
@@ -77,9 +77,6 @@ public class Framework extends Canvas {
     // Images for menu.
     private BufferedImage gameTitleImg;
     private BufferedImage menuBorderImg;
-    //private BufferedImage skyColorImg;
-    //private BufferedImage cloudLayer1Img;
-    //private BufferedImage cloudLayer2Img;
     
     
     public Framework ()

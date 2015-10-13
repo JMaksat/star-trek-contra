@@ -6,7 +6,7 @@ import javax.swing.SwingUtilities;
 /**
  * Creates frame and set its properties.
  * 
- * @author ergeshbayev
+ * @author Maksat E.
  */
 
 public class Window extends JFrame{
